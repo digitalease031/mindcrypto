@@ -1,14 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/mindcrypto-site',
+  basePath: '/mindcrypto',
   images: {
     unoptimized: true,
     loader: 'custom',
     loaderFile: './src/utils/imageLoader.ts',
   },
   // This is required for GitHub Pages
-  assetPrefix: '/mindcrypto-site/',
+  assetPrefix: '/mindcrypto/',
 };
 
 export default nextConfig;
