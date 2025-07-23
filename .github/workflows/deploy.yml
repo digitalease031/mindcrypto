@@ -24,10 +24,13 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.DEPLOY_TOKEN }}
-          repository-name: digitalease031/mindcrypto-site
-          branch: main
-          folder: out
-          clean: true 
+          personal_token: ${{ secrets.GH_PAT }}
+          external_repository: digitalease031/mindcrypto-site
+          publish_branch: main
+          publish_dir: ./out
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Deploy: ${{ github.sha }}'
+          full_commit_message: 'Deploy from mindcrypto' 
