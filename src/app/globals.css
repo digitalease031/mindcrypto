@@ -2,47 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-  background: linear-gradient(135deg, #0a0a0f 0%, #181A20 60%, #23243a 100%);
-  color: #E0E7EF;
-  font-family: 'Inter', 'DM Sans', 'Segoe UI', Arial, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: linear-gradient(135deg, #0a0a0f 0%, #181A20 60%, #23243a 100%);
+    color: #E0E7EF;
+    font-family: 'Inter', 'DM Sans', 'Segoe UI', Arial, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(120deg, #0a0a0f 0%, #181A20 60%, #23243a 100%);
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(120deg, rgba(40,40,60,0.18) 0%, rgba(20,20,30,0.08) 100%);
+    opacity: 0.6;
+    mix-blend-mode: lighten;
+  }
 }
 
-body {
-  background: linear-gradient(120deg, #0a0a0f 0%, #181A20 60%, #23243a 100%);
-  min-height: 100vh;
-  position: relative;
-}
+@layer components {
+  section {
+    @apply bg-gradient-to-br from-background-dark via-background-dark to-surface-dark shadow-2xl rounded-3xl;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
+  }
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  background: linear-gradient(120deg, rgba(40,40,60,0.18) 0%, rgba(20,20,30,0.08) 100%);
-  opacity: 0.6;
-  mix-blend-mode: lighten;
-}
+  .card, .rounded-md, .rounded-lg {
+    @apply bg-background-dark bg-opacity-80 shadow-xl backdrop-blur-lg border border-border rounded-3xl transition-all duration-300;
+  }
 
-section {
-  @apply bg-gradient-to-br from-background-dark via-background-dark to-surface-dark shadow-2xl rounded-3xl;
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.card, .rounded-md, .rounded-lg {
-  @apply bg-background-dark bg-opacity-80 shadow-xl backdrop-blur-lg border border-border rounded-3xl;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-.card:hover, .rounded-md:hover, .rounded-lg:hover {
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
-  transform: translateY(-2px) scale(1.02);
+  .card:hover, .rounded-md:hover, .rounded-lg:hover {
+    @apply shadow-2xl transform -translate-y-1 scale-[1.02];
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

@@ -1,12 +1,13 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === "production";
-
 const nextConfig = {
-  basePath: isProd ? "/MindCrypto" : "",
-  assetPrefix: isProd ? "/MindCrypto/" : "",
-  output: "export",
   images: {
-    unoptimized: true,
+    domains: ['localhost', 'mindcrypto.vercel.app'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 };
 
