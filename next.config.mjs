@@ -1,14 +1,24 @@
 /** @type {import('next').NextConfig} */
+const isGithubActions = process.env.GITHUB_ACTIONS || false;
+
+let assetPrefix = '/mindcrypto';
+let basePath = '/mindcrypto';
+
+if (process.env.NODE_ENV === 'development') {
+  assetPrefix = '';
+  basePath = '';
+}
+
 const nextConfig = {
   output: 'export',
-  basePath: '/mindcrypto-site',
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   images: {
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './src/utils/imageLoader.ts',
+    path: `${assetPrefix}/_next/image`,
   },
   // This is required for GitHub Pages
-  assetPrefix: '/mindcrypto-site/',
+  trailingSlash: true,
 };
 
 export default nextConfig;
