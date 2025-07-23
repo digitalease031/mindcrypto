@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: '/mindcrypto',
   images: {
-    domains: ['localhost', 'mindcrypto.vercel.app'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**',
-      },
-    ],
+    unoptimized: true,
   },
+  // This is required for GitHub Pages
+  assetPrefix: '/mindcrypto/',
 };
 
 export default nextConfig;
