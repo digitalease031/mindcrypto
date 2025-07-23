@@ -1,0 +1,17 @@
+<svg width="220" height="60" viewBox="0 0 220 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mc-gradient-white" x1="0" y1="0" x2="220" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B69DF8"/>
+      <stop offset="1" stop-color="#67E8F9"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <!-- Monogram MC -->
+    <rect x="10" y="10" width="40" height="40" rx="10" fill="url(#mc-gradient-white)"/>
+    <text x="30" y="38" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff">MC</text>
+    <!-- Brand Text -->
+    <text x="60" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff">Mind</text>
+    <text x="140" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="bold" fill="url(#mc-gradient-white)">Crypto</text>
+  </g>
+</svg>
+  
